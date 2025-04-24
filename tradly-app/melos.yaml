@@ -1,0 +1,83 @@
+name: modular
+
+# repository:
+# command:
+#   version:
+#     linkToCommits: true
+#     workspaceChangelog: true
+
+packages:
+  - .
+  - packages/**
+
+scripts:
+  # Setup env and git hooks via Hanzo
+  postbootstrap: >
+    melos exec -- puro flutter pub get && 
+    puro pub global activate git_hooks &&
+    puro dart pub global activate full_coverage &&
+    puro dart pub global activate flutter_gen &&
+    puro dart pub global activate test_cov_console &&
+    melos run dev:generate:i18n &&
+    melos run dev:generate:native_splash &&
+    melos run build_runner
+
+  postclean: >
+    melos exec -- puro flutter clean
+
+  analyze:
+    run: melos exec -- puro flutter analyze .
+    description: Run `dart analyze` in all packages.
+
+  # Start mobile apps scripts
+  run:app:
+    run: melos exec -- puro flutter run lib/main.dart
+    packageFilters:
+      flutter: true
+      scope:
+        - tradly_app
+
+  # Generation i18n file
+  dev:generate:i18n:
+    run: melos exec --scope="tradly_app" -- "puro flutter pub run intl_utils:generate"
+    description: "Generation localizations"
+    packageFilters:
+      flutter: true
+      scope:
+        - tradly_app
+
+  # Generation icon launcher DEV version
+  generate:icon_launcher_dev:
+    run: melos exec -- puro flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons_dev.yaml
+    description: "Generation icon launcher DEV version"
+    packageFilters:
+      scope:
+        - tradly_app
+
+  # Generation icon launcher PROD version
+  generate:icon_launcher:
+    run: melos exec -- puro flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons_prod.yaml
+    description: "Generation icon launcher PROD version"
+    packageFilters:
+      scope:
+        - tradly_app
+
+  # Generation native splash
+  dev:generate:native_splash:
+    run: melos exec -- puro flutter pub run flutter_native_splash:create
+    description: "Generation asset to display splash screen"
+    packageFilters:
+      scope:
+        - tradly_app
+
+  build_runner:
+    run: |
+      melos exec -- "puro flutter pub run build_runner build --delete-conflicting-outputs"
+    packageFilters:
+      ignore:
+        - debugger
+        - fluttertoast
+        - date_picker_plus
+        - open_mail_app
+        - search_field
+
