@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1023384584769",
+    "project_id": "tradly-shop",
+    "storage_bucket": "tradly-shop.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023384584769:android:d692fd1fb0a1bcd1c87cc0",
+        "android_client_info": {
+          "package_name": "com.example.tradly_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwfFedTE1Xr0KGmoVyK6Mlw0_VclghdDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

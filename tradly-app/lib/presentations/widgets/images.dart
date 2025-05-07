@@ -88,28 +88,25 @@ class _TAImage extends StatelessWidget {
                 package: package,
                 width: width,
               )
-            : SizedBox(
+            : Container(
                 width: width,
                 height: height,
-                child: ClipRRect(
+                decoration: BoxDecoration(
+                  color: color, // Include color in the decoration
                   borderRadius: isBorderTop
                       ? BorderRadius.only(
                           topLeft: Radius.circular(borderRadius ?? 10),
-                          topRight: Radius.circular(borderRadius ?? 10))
+                          topRight: Radius.circular(borderRadius ?? 10),
+                        )
                       : BorderRadius.circular(borderRadius ?? 0),
-                  child: SizedBox.fromSize(
-                    size: Size.fromRadius(borderRadius ?? 0),
-                    child: Image.asset(
-                      opacity: opacity,
-                      imagePath,
-                      package: package,
-                      fit: boxFit,
-                      color: color,
-                      errorBuilder: (context, error, stackTrace) =>
-                          errorBuilder ??
-                          _errorBuilder(width, height, path: path),
-                    ),
-                  ),
+                ),
+                clipBehavior: Clip.hardEdge,
+                child: Image.asset(
+                  imagePath,
+                  package: package,
+                  fit: boxFit,
+                  errorBuilder: (context, error, stackTrace) =>
+                      errorBuilder ?? _errorBuilder(width, height, path: path),
                 ),
               );
 
@@ -120,15 +117,27 @@ class _TAImage extends StatelessWidget {
           width: isCircle ? null : width,
           height: isCircle ? null : height,
           placeholder: (context, url) => Container(
-            color: context.colorScheme.surfaceTint,
+            decoration: BoxDecoration(
+              color: context.colorScheme.surfaceTint,
+              borderRadius: isBorderTop
+                  ? BorderRadius.only(
+                      topLeft: Radius.circular(borderRadius ?? 10),
+                      topRight: Radius.circular(borderRadius ?? 10),
+                    )
+                  : BorderRadius.circular(borderRadius ?? 0),
+            ),
           ),
-          color: color,
           errorWidget: (context, url, error) =>
               errorBuilder ?? _errorBuilder(width, height, path: path),
           imageBuilder: (context, imageProvider) => shape == BoxShape.circle
               ? CircleAvatar(backgroundImage: imageProvider, radius: width)
               : ClipRRect(
-                  borderRadius: BorderRadius.circular(borderRadius ?? 0),
+                  borderRadius: isBorderTop
+                      ? BorderRadius.only(
+                          topLeft: Radius.circular(borderRadius ?? 10),
+                          topRight: Radius.circular(borderRadius ?? 10),
+                        )
+                      : BorderRadius.circular(borderRadius ?? 0),
                   child: SizedBox.fromSize(
                       size: Size.fromRadius(borderRadius ?? 0),
                       child: Image(

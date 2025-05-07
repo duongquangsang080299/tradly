@@ -3,97 +3,97 @@ import 'package:tradly_app/core/themes/app_colors.dart';
 import 'package:tradly_app/core/themes/app_palette.dart';
 import 'package:tradly_app/core/themes/typography.dart';
 
-class TaTheme {
+class TATheme {
   static ThemeData get light {
     final defaultTheme = ThemeData.light(
       useMaterial3: true,
     );
 
     return defaultTheme.copyWith(
-      colorScheme: TaColors.light,
+      colorScheme: TAColors.light,
       brightness: Brightness.light,
 
       /// AppBar Theme
       appBarTheme: AppBarTheme(
-        backgroundColor: TaColors.light.primary,
-        foregroundColor: TaColors.light.onPrimary,
+        backgroundColor: TAColors.light.primary,
+        foregroundColor: TAColors.light.onPrimary,
         elevation: 0,
       ),
 
       /// Divider Theme
       dividerTheme: DividerThemeData(
-        color: TaColors.light.outline,
+        color: TAColors.light.outline,
         thickness: 1,
       ),
 
       /// Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: TaColors.light.surface,
+        fillColor: TAColors.light.surface,
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: TaColors.light.outline),
+          borderSide: BorderSide(color: TAColors.light.outline),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: TaColors.light.primary),
+          borderSide: BorderSide(color: TAColors.light.primary),
         ),
       ),
 
       /// Icon Theme
       iconTheme: IconThemeData(
-        color: TaColors.light.onSurface,
+        color: TAColors.light.onSurface,
       ),
 
       /// Elevated Button Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: TaColors.light.primary,
-          foregroundColor: TaColors.light.onPrimary,
+          backgroundColor: TAColors.light.primary,
+          foregroundColor: TAColors.light.onPrimary,
         ),
       ),
 
       /// Text Theme
       textTheme: TextTheme(
         displayLarge: TextStyle(
-          fontSize: TaTypography.fontSizeDisplayLarge,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeDisplayLarge,
+          fontFamily: TATypography.familyMontserrat,
         ),
         displayMedium: TextStyle(
-          fontSize: TaTypography.fontSizeDisplayMedium,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeDisplayMedium,
+          fontFamily: TATypography.familyMontserrat,
         ),
         displaySmall: TextStyle(
-          fontSize: TaTypography.fontSizeDisplaySmall,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeDisplaySmall,
+          fontFamily: TATypography.familyMontserrat,
           fontWeight: FontWeight.w500,
-          color: TaPalette.genericWhite,
+          color: TAPalette.genericWhite,
         ),
         headlineLarge: TextStyle(
-          fontSize: TaTypography.fontSizeHeadlineLarge,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeHeadlineLarge,
+          fontFamily: TATypography.familyMontserrat,
         ),
         headlineMedium: TextStyle(
-          fontSize: TaTypography.fontSizeHeadlineMedium,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeHeadlineMedium,
+          fontFamily: TATypography.familyMontserrat,
         ),
         headlineSmall: TextStyle(
-          fontSize: TaTypography.fontSizeHeadlineSmall,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeHeadlineSmall,
+          fontFamily: TATypography.familyMontserrat,
         ),
         titleLarge: TextStyle(
-          fontSize: TaTypography.fontSizeTitleLarge,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeTitleLarge,
+          fontFamily: TATypography.familyMontserrat,
         ),
         titleMedium: TextStyle(
-          fontSize: TaTypography.fontSizeTitleMedium,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeTitleMedium,
+          fontFamily: TATypography.familyMontserrat,
         ),
         titleSmall: TextStyle(
-          fontSize: TaTypography.fontSizeTitleSmall,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeTitleSmall,
+          fontFamily: TATypography.familyMontserrat,
         ),
         labelLarge: TextStyle(
-          fontSize: TaTypography.fontSizeLabelLarge,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeLabelLarge,
+          fontFamily: TATypography.familyMontserrat,
         ),
       ),
     );
@@ -105,90 +105,90 @@ class TaTheme {
     );
 
     return defaultTheme.copyWith(
-      colorScheme: TaColors.dark,
+      colorScheme: TAColors.dark,
       brightness: Brightness.dark,
 
       /// AppBar Theme
       appBarTheme: AppBarTheme(
-        backgroundColor: TaColors.dark.primary,
-        foregroundColor: TaColors.dark.onPrimary,
+        backgroundColor: TAColors.dark.primary,
+        foregroundColor: TAColors.dark.onPrimary,
         elevation: 0,
       ),
 
       /// Divider Theme
       dividerTheme: DividerThemeData(
-        color: TaColors.dark.outline,
+        color: TAColors.dark.outline,
         thickness: 1,
       ),
 
       /// Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: TaColors.dark.surface,
+        fillColor: TAColors.dark.surface,
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: TaColors.dark.outline),
+          borderSide: BorderSide(color: TAColors.dark.outline),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: TaColors.dark.primary),
+          borderSide: BorderSide(color: TAColors.dark.primary),
         ),
       ),
 
       /// Icon Theme
       iconTheme: IconThemeData(
-        color: TaColors.dark.onSurface,
+        color: TAColors.dark.onSurface,
       ),
 
       /// Elevated Button Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: TaColors.dark.primary,
-          foregroundColor: TaColors.dark.onPrimary,
+          backgroundColor: TAColors.dark.primary,
+          foregroundColor: TAColors.dark.onPrimary,
         ),
       ),
 
       /// Text Theme
       textTheme: TextTheme(
         displayLarge: TextStyle(
-          fontSize: TaTypography.fontSizeDisplayLarge,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeDisplayLarge,
+          fontFamily: TATypography.familyMontserrat,
         ),
         displayMedium: TextStyle(
-          fontSize: TaTypography.fontSizeDisplayMedium,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeDisplayMedium,
+          fontFamily: TATypography.familyMontserrat,
         ),
         displaySmall: TextStyle(
-          fontSize: TaTypography.fontSizeDisplaySmall,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeDisplaySmall,
+          fontFamily: TATypography.familyMontserrat,
           fontWeight: FontWeight.w500,
-          color: TaPalette.genericWhite,
+          color: TAPalette.genericWhite,
         ),
         headlineLarge: TextStyle(
-          fontSize: TaTypography.fontSizeHeadlineLarge,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeHeadlineLarge,
+          fontFamily: TATypography.familyMontserrat,
         ),
         headlineMedium: TextStyle(
-          fontSize: TaTypography.fontSizeHeadlineMedium,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeHeadlineMedium,
+          fontFamily: TATypography.familyMontserrat,
         ),
         headlineSmall: TextStyle(
-          fontSize: TaTypography.fontSizeHeadlineSmall,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeHeadlineSmall,
+          fontFamily: TATypography.familyMontserrat,
         ),
         titleLarge: TextStyle(
-          fontSize: TaTypography.fontSizeTitleLarge,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeTitleLarge,
+          fontFamily: TATypography.familyMontserrat,
         ),
         titleMedium: TextStyle(
-          fontSize: TaTypography.fontSizeTitleMedium,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeTitleMedium,
+          fontFamily: TATypography.familyMontserrat,
         ),
         titleSmall: TextStyle(
-          fontSize: TaTypography.fontSizeTitleSmall,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeTitleSmall,
+          fontFamily: TATypography.familyMontserrat,
         ),
         labelLarge: TextStyle(
-          fontSize: TaTypography.fontSizeLabelLarge,
-          fontFamily: TaTypography.familyMontserrat,
+          fontSize: TATypography.fontSizeLabelLarge,
+          fontFamily: TATypography.familyMontserrat,
         ),
       ),
     );

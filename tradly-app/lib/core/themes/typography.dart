@@ -1,4 +1,4 @@
-abstract class TaTypography {
+abstract class TATypography {
   static const String familyMontserrat = 'Montserrat';
 
   /// Size Display Large

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/core/extensions/context_extensions.dart';
+import 'package:tradly_app/presentations/layouts/scaffold.dart';
 import 'package:tradly_app/presentations/widgets/not_found.dart';
 
 class BrowseScreen extends StatelessWidget {
@@ -7,8 +7,7 @@ class BrowseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: context.colorScheme.inversePrimary,
+    return TAScaffold(
       body: const NotFoundScreen(),
     );
   }

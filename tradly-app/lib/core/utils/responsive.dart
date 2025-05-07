@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-enum TaResponsiveSizeType {
+enum TAResponsiveSizeType {
   mobile,
   tablet,
 }
 
-class TaResponsiveConfig {
+class TAResponsiveConfig {
   static const double defaultTabletScaleFactor = 1;
 }
 
-class TaResponsive {
+class TAResponsive {
   static double value(
     BuildContext context, {
     double? mobile,
@@ -48,7 +48,7 @@ class TaResponsive {
     BuildContext context, {
     required double defaultValue,
     double? mobile,
-    double? tablet = TaResponsiveConfig.defaultTabletScaleFactor,
+    double? tablet = TAResponsiveConfig.defaultTabletScaleFactor,
     double? desktop,
   }) {
     final conditionalValues = <Condition<double>>[];
@@ -91,14 +91,14 @@ class TaResponsive {
     BuildContext context, {
     required Widget child,
     bool? visible = false,
-    List<TaResponsiveSizeType> visibleWhen = const [],
+    List<TAResponsiveSizeType> visibleWhen = const [],
   }) {
     final visibleConditions = visibleWhen.map((platform) {
       String name;
       switch (platform) {
-        case TaResponsiveSizeType.mobile:
+        case TAResponsiveSizeType.mobile:
           name = MOBILE;
-        case TaResponsiveSizeType.tablet:
+        case TAResponsiveSizeType.tablet:
           name = TABLET;
       }
 

@@ -5,6 +5,7 @@ import 'package:tradly_app/core/extensions/context_extensions.dart';
 import 'package:tradly_app/core/resources/l10n_generated/l10n.dart';
 import 'package:tradly_app/data/models/product_model.dart';
 import 'package:tradly_app/presentations/layouts/app_bar.dart';
+import 'package:tradly_app/presentations/layouts/scaffold.dart';
 import 'package:tradly_app/presentations/pages/store/states/store_bloc.dart';
 import 'package:tradly_app/presentations/pages/store/states/store_event.dart';
 import 'package:tradly_app/presentations/pages/store/states/store_state.dart';
@@ -64,14 +65,13 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: context.colorScheme.inversePrimary,
+    return TAScaffold(
       appBar: TaAppBar(
         toolbarHeight: TaAppBarSize.small,
         backgroundColor: context.colorScheme.primary,
         title: Padding(
           padding: EdgeInsets.only(left: 16),
-          child: TaDisplaySmallText(
+          child: TADisplaySmallText(
             text: S.current.storeEditProductTitle,
             fontWeight: FontWeight.w700,
           ),
@@ -93,7 +93,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 const SizedBox(height: 14),
                 Padding(
                   padding: const EdgeInsets.all(20),
-                  child: TaTitleLargeText(
+                  child: TATitleLargeText(
                     text: S.current.storeMaxPhotoProductTitle,
                     color: context.colorScheme.outline,
                   ),
@@ -238,12 +238,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TAIcons.add(),
-            TaTitleLargeText(
+            TATitleLargeText(
               text: S.current.storeAddPhotoTitle,
               color: context.colorScheme.onPrimaryContainer,
               fontWeight: FontWeight.w600,
             ),
-            TaLabelLargeText(
+            TALabelLargeText(
               text: S.current.storeAddPhotoDescription,
               color: context.colorScheme.onPrimaryContainer,
               fontWeight: FontWeight.w500,

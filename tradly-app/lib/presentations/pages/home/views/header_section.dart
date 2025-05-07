@@ -31,7 +31,7 @@ class HomeSectionHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          TaHeadlineMediumText(
+          TAHeadlineMediumText(
             text: title,
             fontWeight: FontWeight.w700,
             color: textColor ?? context.colorScheme.outline,
@@ -42,7 +42,7 @@ class HomeSectionHeader extends StatelessWidget {
               minimumSize: const Size(100, 25),
               backgroundColor: buttonColor ?? context.colorScheme.primary,
             ),
-            child: TaTitleMediumText(
+            child: TATitleMediumText(
               text: buttonText ?? S.current.homeSeeAllButton,
               color: buttonTextColor ?? context.colorScheme.onPrimary,
             ),

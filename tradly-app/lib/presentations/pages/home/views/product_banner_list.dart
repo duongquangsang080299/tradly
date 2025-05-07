@@ -46,7 +46,7 @@ class ProductBannerList extends StatelessWidget {
                     SizedBox(height: 50),
                     Padding(
                       padding: const EdgeInsets.only(left: 17),
-                      child: TaTitleLargeText(
+                      child: TATitleLargeText(
                         text: S.current.homeBannerDescription,
                         fontWeight: FontWeight.bold,
                         color: context.colorScheme.onPrimary,
@@ -72,7 +72,7 @@ class ProductBannerList extends StatelessWidget {
                             vertical: 12,
                           ),
                         ),
-                        child: TaTitleMediumText(
+                        child: TATitleMediumText(
                           text: S.current.homeBannerTextButton,
                           fontWeight: FontWeight.bold,
                         ),

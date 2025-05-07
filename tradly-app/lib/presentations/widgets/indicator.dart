@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tradly_app/core/extensions/context_extensions.dart';
 
-class LALoadingIndicator extends StatelessWidget {
-  const LALoadingIndicator({
+class TALoadingIndicator extends StatelessWidget {
+  const TALoadingIndicator({
     super.key,
     this.radius,
     this.color,
@@ -15,18 +15,18 @@ class LALoadingIndicator extends StatelessWidget {
 
   final Color? color;
 
-  static Future<LALoadingIndicator?> show(
+  static Future<TALoadingIndicator?> show(
     BuildContext context, {
     double? radius,
     Color? color,
   }) {
-    return showDialog<LALoadingIndicator>(
+    return showDialog<TALoadingIndicator>(
       context: context,
       builder: (_) => PopScope(
         canPop: false,
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-          child: LALoadingIndicator(
+          child: TALoadingIndicator(
             radius: radius,
             color: color,
           ),

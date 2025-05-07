@@ -28,7 +28,7 @@ class AddProductCard extends StatelessWidget {
           children: [
             TAIcons.add(size: 40),
             const SizedBox(height: 8),
-            TaHeadlineMediumText(
+            TAHeadlineMediumText(
               text: S.current.storeAddProductButton,
               color: context.colorScheme.outline,
               fontWeight: FontWeight.w500,

@@ -7,8 +7,8 @@ import 'package:tradly_app/data/repositories/auth_repo.dart';
 import 'package:tradly_app/data/repositories/home_repo.dart';
 import 'package:tradly_app/data/repositories/product_repo.dart';
 import 'package:tradly_app/data/repositories/store_repo.dart.dart';
-import 'package:tradly_app/presentations/pages/auth/states/sign_in_bloc.dart';
-import 'package:tradly_app/presentations/pages/auth/states/sign_up_bloc.dart';
+import 'package:tradly_app/presentations/pages/auth/sign_in/states/sign_in_bloc.dart';
+import 'package:tradly_app/presentations/pages/auth/sign_up/states/sign_up_bloc.dart';
 
 class TAProvider extends StatelessWidget {
   const TAProvider({

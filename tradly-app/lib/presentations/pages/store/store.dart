@@ -6,6 +6,7 @@ import 'package:tradly_app/core/resources/assets_generated/assets.gen.dart';
 import 'package:tradly_app/core/resources/l10n_generated/l10n.dart';
 import 'package:tradly_app/core/routes/app_router.dart';
 import 'package:tradly_app/presentations/layouts/app_bar.dart';
+import 'package:tradly_app/presentations/layouts/scaffold.dart';
 import 'package:tradly_app/presentations/pages/home/views/search_view.dart';
 import 'package:tradly_app/presentations/pages/store/states/store_bloc.dart';
 import 'package:tradly_app/presentations/pages/store/states/store_event.dart';
@@ -28,14 +29,13 @@ class StoreScreen extends StatefulWidget {
 class _StoreScreenState extends State<StoreScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: context.colorScheme.inversePrimary,
+    return TAScaffold(
       appBar: TaAppBar(
         toolbarHeight: TaAppBarSize.small,
         bottomType: TaAppBarBottomType.none,
         title: Padding(
           padding: const EdgeInsets.only(left: 16),
-          child: TaDisplaySmallText(
+          child: TADisplaySmallText(
             text: S.current.storeTitle,
             fontWeight: FontWeight.w700,
           ),
@@ -88,7 +88,7 @@ class _StoreScreenState extends State<StoreScreen> {
                               ),
                             ),
                             const SizedBox(height: 16),
-                            TaDisplaySmallText(
+                            TADisplaySmallText(
                               text: state.stores?.name ?? '',
                               fontWeight: FontWeight.w700,
                               color: context.colorScheme.onSurface,
@@ -110,7 +110,7 @@ class _StoreScreenState extends State<StoreScreen> {
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 20),
                                   ),
-                                  child: TaTitleMediumText(
+                                  child: TATitleMediumText(
                                     text: S.current.storeEditStoreButton,
                                     color: context.colorScheme.primary,
                                   ),
@@ -129,7 +129,7 @@ class _StoreScreenState extends State<StoreScreen> {
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 20),
                                   ),
-                                  child: TaTitleMediumText(
+                                  child: TATitleMediumText(
                                     text: S.current.storeViewButton,
                                     color: context.colorScheme.primary,
                                   ),
@@ -140,7 +140,7 @@ class _StoreScreenState extends State<StoreScreen> {
                             Divider(color: Colors.grey[300]),
                             TextButton(
                               onPressed: () {},
-                              child: TaTitleLargeText(
+                              child: TATitleLargeText(
                                 text: S.current.storeRemoveButton,
                                 color: Colors.grey,
                               ),
@@ -165,7 +165,7 @@ class _StoreScreenState extends State<StoreScreen> {
                         fit: BoxFit.cover,
                       ),
                       const SizedBox(height: 30),
-                      TaHeadlineMediumText(
+                      TAHeadlineMediumText(
                         text: S.current.storeNoStore,
                         color: context.colorScheme.onSurface,
                         fontWeight: FontWeight.w600,
@@ -193,7 +193,7 @@ class _StoreScreenState extends State<StoreScreen> {
     return Column(
       children: [
         SizedBox(height: 30),
-        TaHeadlineMediumText(
+        TAHeadlineMediumText(
           text: S.current.storeNoProduct,
           fontWeight: FontWeight.w600,
           color: context.colorScheme.onSurface,
@@ -231,7 +231,7 @@ class _StoreScreenState extends State<StoreScreen> {
         const SizedBox(height: 27),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: TaHeadlineMediumText(
+          child: TAHeadlineMediumText(
             text: S.current.storeProductsTitle,
             fontWeight: FontWeight.w600,
             color: context.colorScheme.onSurface,

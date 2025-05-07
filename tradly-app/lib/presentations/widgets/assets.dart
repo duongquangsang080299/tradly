@@ -267,11 +267,11 @@ class _TAOnboardingBusinessImage extends StatelessWidget {
     return TAAssetImage(
       boxFit: boxfit,
       path: Assets.images.imgOnboardingBusiness.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 285,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 243,
       ),
@@ -294,11 +294,11 @@ class _TAShoppingImage extends StatelessWidget {
     return TAAssetImage(
       boxFit: boxfit,
       path: Assets.images.payment.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 305,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 165,
       ),
@@ -321,11 +321,11 @@ class _TAOnboardingSocialImage extends StatelessWidget {
     return TAAssetImage(
       boxFit: boxfit,
       path: Assets.images.imgOnboardingSocial.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 302,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 248,
       ),
@@ -348,11 +348,11 @@ class _TAOnboardingSupportImage extends StatelessWidget {
     return TAAssetImage(
       boxFit: boxfit,
       path: Assets.images.imgOnboardingSupport.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 285,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 243,
       ),
@@ -377,11 +377,11 @@ class _TACategoryImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icCategory.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 16,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 16,
       ),
@@ -408,11 +408,11 @@ class _TAHomeImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icHome.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 24,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 24,
       ),
@@ -437,11 +437,11 @@ class _TALocationImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icLocation.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 24,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 24,
       ),
@@ -466,11 +466,11 @@ class _TAOrderImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icOrder.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 24,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 24,
       ),
@@ -497,11 +497,11 @@ class _TASortListImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icSortList.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 16,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 16,
       ),
@@ -527,11 +527,11 @@ class _TAStoreImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icStore.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 24,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 24,
       ),
@@ -557,11 +557,11 @@ class _TASearchImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icSearch.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 23,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 23,
       ),
@@ -587,15 +587,15 @@ class _TAProfileImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icProfile.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 24,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 24,
       ),
-      color: color ?? Colors.grey,
+      color: color ?? Colors.black,
     );
   }
 }
@@ -617,11 +617,11 @@ class _TACartImage extends StatelessWidget {
       boxFit: boxfit,
       type: ImageLoaderType.assetSVG,
       path: Assets.icons.icCart.path,
-      width: TaResponsive.scale(
+      width: TAResponsive.scale(
         context,
         defaultValue: width ?? 24,
       ),
-      height: TaResponsive.scale(
+      height: TAResponsive.scale(
         context,
         defaultValue: height ?? 24,
       ),

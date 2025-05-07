@@ -84,6 +84,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/ic_launcher.png
+  AssetGenImage get icLauncher =>
+      const AssetGenImage('assets/images/ic_launcher.png');
+
   /// File path: assets/images/img_empty_store.png
   AssetGenImage get imgEmptyStore =>
       const AssetGenImage('assets/images/img_empty_store.png');
@@ -117,6 +121,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        icLauncher,
         imgEmptyStore,
         imgOnboardingBusiness,
         imgOnboardingSocial,

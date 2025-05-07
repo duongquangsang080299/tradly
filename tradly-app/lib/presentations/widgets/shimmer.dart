@@ -27,7 +27,7 @@ class TAShimmerLoading extends StatefulWidget {
     required double size,
     Color? startColor,
     Color? endColor,
-    Duration durationAnimated = const Duration(milliseconds: 600),
+    Duration durationAnimated = const Duration(seconds: 100),
     required BuildContext context,
   }) =>
       TAShimmerLoading(
@@ -36,8 +36,8 @@ class TAShimmerLoading extends StatefulWidget {
         borderRadius: BorderRadius.all(
           Radius.circular(size / 2),
         ),
-        startColor: startColor ?? context.colorScheme.outline,
-        endColor: endColor ?? context.colorScheme.outline,
+        startColor: startColor ?? context.colorScheme.primary,
+        endColor: endColor ?? context.colorScheme.primary,
         durationAnimated: durationAnimated,
         context: context,
       );
@@ -60,11 +60,11 @@ class _TAShimmerLoadingState extends State<TAShimmerLoading>
   void init(BuildContext context) {
     _animationController = AnimationController(
       vsync: this,
-      duration: widget.durationAnimated ?? const Duration(milliseconds: 600),
+      duration: widget.durationAnimated ?? const Duration(seconds: 100),
     );
     _colorAnimation = ColorTween(
-      begin: widget.startColor ?? context.colorScheme.surface,
-      end: widget.endColor ?? context.colorScheme.outlineVariant,
+      begin: widget.startColor ?? context.colorScheme.primary,
+      end: widget.endColor ?? context.colorScheme.primary,
     ).animate(_animationController);
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
@@ -161,10 +161,13 @@ class ShimmerProductList extends StatelessWidget {
       height: 200,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        shrinkWrap: true,
         itemCount: 3,
         itemBuilder: (context, index) {
-          return ShimmerProductCard();
+          return Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: ShimmerProductCard(),
+          );
         },
       ),
     );
@@ -186,31 +189,25 @@ class ShimmerProductCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Product image
           TAShimmerLoading(
             width: 160,
             height: 120,
             context: context,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
           ),
-
-          // Product name
           Padding(
-            padding: EdgeInsets.only(left: 8, top: 8, right: 8),
+            padding: EdgeInsets.only(left: 8, top: 8, right: 10),
             child: TAShimmerLoading(
               width: 100,
               height: 16,
               context: context,
             ),
           ),
-
-          // Store and price row
           Padding(
             padding: EdgeInsets.all(8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Store info
                 Row(
                   children: [
                     TAShimmerLoading.round(
@@ -225,8 +222,6 @@ class ShimmerProductCard extends StatelessWidget {
                     ),
                   ],
                 ),
-
-                // Price
                 TAShimmerLoading(
                   width: 40,
                   height: 16,
@@ -249,7 +244,6 @@ class ShimmerStoreFollowList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Header with green background
         Container(
           color: const Color(0xFF2A8572),
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -274,8 +268,6 @@ class ShimmerStoreFollowList extends StatelessWidget {
             ],
           ),
         ),
-
-        // Store cards
         SizedBox(
           height: 200,
           child: ListView.builder(
@@ -293,7 +285,6 @@ class ShimmerStoreFollowList extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        // Store background image
                         TAShimmerLoading(
                           width: 180,
                           height: 100,
@@ -301,8 +292,6 @@ class ShimmerStoreFollowList extends StatelessWidget {
                           borderRadius: const BorderRadius.vertical(
                               top: Radius.circular(12)),
                         ),
-
-                        // Avatar (positioned to overlap)
                         Transform.translate(
                           offset: Offset(0, -30),
                           child: TAShimmerLoading.round(
@@ -310,8 +299,6 @@ class ShimmerStoreFollowList extends StatelessWidget {
                             context: context,
                           ),
                         ),
-
-                        // Store name
                         Transform.translate(
                           offset: Offset(0, -20),
                           child: TAShimmerLoading(
@@ -320,8 +307,6 @@ class ShimmerStoreFollowList extends StatelessWidget {
                             context: context,
                           ),
                         ),
-
-                        // Follow button
                         Transform.translate(
                           offset: Offset(0, -10),
                           child: TAShimmerLoading(
@@ -338,6 +323,68 @@ class ShimmerStoreFollowList extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// Shimmer for product list grid view
+class ShimmerProductGrid extends StatelessWidget {
+  final int itemCount;
+
+  const ShimmerProductGrid({
+    super.key,
+    this.itemCount = 6,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 0.9,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+      ),
+      padding: const EdgeInsets.all(20),
+      itemCount: itemCount,
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: Colors.white,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TAShimmerLoading(
+                width: double.infinity,
+                height: 120,
+                context: context,
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(12)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: TAShimmerLoading(
+                  width: 100,
+                  height: 16,
+                  context: context,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: TAShimmerLoading(
+                  width: 60,
+                  height: 16,
+                  context: context,
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

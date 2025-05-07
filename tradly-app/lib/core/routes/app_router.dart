@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tradly_app/core/extensions/context_extensions.dart';
 import 'package:tradly_app/core/resources/l10n_generated/l10n.dart';
 import 'package:tradly_app/core/routes/router_guard.dart';
 import 'package:tradly_app/data/models/product_model.dart';
 import 'package:tradly_app/presentations/layouts/bottom_navigation_bar.dart';
-import 'package:tradly_app/presentations/pages/auth/otp_verification_screen.dart';
-import 'package:tradly_app/presentations/pages/auth/send_otp_screen.dart';
-import 'package:tradly_app/presentations/pages/auth/sign_in_screen.dart';
-import 'package:tradly_app/presentations/pages/auth/sign_up_screen.dart';
+import 'package:tradly_app/presentations/layouts/scaffold.dart';
+import 'package:tradly_app/presentations/pages/auth/sign_in/sign_in_screen.dart';
+import 'package:tradly_app/presentations/pages/auth/sign_up/sign_up_screen.dart';
 import 'package:tradly_app/presentations/pages/browse/browse.dart';
 import 'package:tradly_app/presentations/pages/home/home_screen.dart';
 import 'package:tradly_app/presentations/pages/on_boarding/on_boarding_screen.dart';
-import 'package:tradly_app/presentations/pages/order_history/order_history_screen.dart';
+import 'package:tradly_app/presentations/pages/order_history/order_history.dart';
 import 'package:tradly_app/presentations/pages/product_detail/product_detail.dart';
-import 'package:tradly_app/presentations/pages/product_detail/views/beverages_list.dart';
-import 'package:tradly_app/presentations/pages/product_detail/views/bread_bakery_list.dart';
-import 'package:tradly_app/presentations/pages/product_detail/views/egg_list.dart';
-import 'package:tradly_app/presentations/pages/product_detail/views/frozen_veg_list.dart';
-import 'package:tradly_app/presentations/pages/product_detail/views/fruit_list.dart';
-import 'package:tradly_app/presentations/pages/product_detail/views/home_care_list.dart';
-import 'package:tradly_app/presentations/pages/product_detail/views/pet_care.dart';
-import 'package:tradly_app/presentations/pages/product_detail/views/vegetables_list.dart';
+import 'package:tradly_app/presentations/pages/product_detail/views/checkout.dart';
+import 'package:tradly_app/presentations/pages/product_detail/views/product_list.dart';
 import 'package:tradly_app/presentations/pages/product_detail/views/wish_list.dart';
 import 'package:tradly_app/presentations/pages/profile/profile.dart';
 import 'package:tradly_app/presentations/pages/store/store.dart';
@@ -69,16 +63,6 @@ class TARouter {
         },
       ),
       GoRoute(
-        name: TAPaths.sendOTP.name,
-        path: TAPaths.sendOTP.path,
-        builder: (context, state) => const SendOtpScreen(),
-      ),
-      GoRoute(
-        name: TAPaths.otpVerification.name,
-        path: TAPaths.otpVerification.path,
-        builder: (context, state) => const OtpVerificationScreen(),
-      ),
-      GoRoute(
         name: TAPaths.addProduct.name,
         path: TAPaths.addProduct.path,
         builder: (context, state) => const AddProductDetailScreen(),
@@ -87,6 +71,11 @@ class TARouter {
         name: TAPaths.createStore.name,
         path: TAPaths.createStore.path,
         builder: (context, state) => const CreateStoreScreen(),
+      ),
+      GoRoute(
+        name: TAPaths.checkout.name,
+        path: TAPaths.checkout.path,
+        builder: (context, state) => const CheckoutScreen(),
       ),
       GoRoute(
         name: TAPaths.editProduct.name,
@@ -107,88 +96,19 @@ class TARouter {
         },
       ),
       GoRoute(
-        name: TAPaths.beverages.name,
-        path: TAPaths.beverages.path,
+        name: TAPaths.productList.name,
+        path: TAPaths.productList.path,
         builder: (context, state) {
-          final categoryId = state.extra is int ? state.extra as int : null;
-          return BeveragesList(
-            categoryId: categoryId,
-          );
-        },
-      ),
-      GoRoute(
-        name: TAPaths.vegetables.name,
-        path: TAPaths.vegetables.path,
-        builder: (context, state) {
-          final categoryId = state.extra is int ? state.extra as int : null;
-          return VegetablesList(
-            categoryId: categoryId,
-          );
-        },
-      ),
-      GoRoute(
-        name: TAPaths.breadBakely.name,
-        path: TAPaths.breadBakely.path,
-        builder: (context, state) {
-          final categoryId = state.extra is int ? state.extra as int : null;
-          return BreadBakeryList(
-            categoryId: categoryId,
-          );
-        },
-      ),
-      GoRoute(
-        name: TAPaths.egg.name,
-        path: TAPaths.egg.path,
-        builder: (context, state) {
-          final categoryId = state.extra is int ? state.extra as int : null;
-          return EggList(
-            categoryId: categoryId,
-          );
-        },
-      ),
-      GoRoute(
-        name: TAPaths.fruit.name,
-        path: TAPaths.fruit.path,
-        builder: (context, state) {
-          final categoryId = state.extra is int ? state.extra as int : null;
-          return FruitList(
-            categoryId: categoryId,
-          );
-        },
-      ),
-      GoRoute(
-        name: TAPaths.homeCare.name,
-        path: TAPaths.homeCare.path,
-        builder: (context, state) {
-          final categoryId = state.extra is int ? state.extra as int : null;
-          return HomeCareList(
-            categoryId: categoryId,
-          );
-        },
-      ),
-      GoRoute(
-        name: TAPaths.frozenVeg.name,
-        path: TAPaths.frozenVeg.path,
-        builder: (context, state) {
-          final categoryId = state.extra is int ? state.extra as int : null;
-          return FrozenVegList(
-            categoryId: categoryId,
-          );
-        },
-      ),
-      GoRoute(
-        name: TAPaths.petCare.name,
-        path: TAPaths.petCare.path,
-        builder: (context, state) {
-          final categoryId = state.extra is int ? state.extra as int : null;
-          return PetCareList(
-            categoryId: categoryId,
+          final extra = state.extra as Map<String, dynamic>?;
+          return ProductList(
+            title: extra?['title'] ?? '',
+            categoryId: extra?['categoryId'] ?? 0,
           );
         },
       ),
       StatefulShellRoute.indexedStack(
         parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state, navigationShell) => Scaffold(
+        builder: (context, state, navigationShell) => TAScaffold(
           body: navigationShell,
           bottomNavigationBar: TABottomNavigationBar(
             currentIndex: navigationShell.currentIndex,
@@ -238,7 +158,12 @@ class TARouter {
               GoRoute(
                 name: TAPaths.orderHistory.name,
                 path: TAPaths.orderHistory.path,
-                builder: (context, state) => const OrderHistoryScreen(),
+                builder: (context, state) {
+                  final product = state.extra is ProductModel
+                      ? state.extra as ProductModel
+                      : null;
+                  return OrderHistoryScreen(product: product);
+                },
               ),
             ],
           ),
@@ -255,32 +180,6 @@ class TARouter {
         ],
       ),
     ];
-  }
-
-  static void navigateToCategory(
-    BuildContext context,
-    String routeName, {
-    Map<String, String>? queryParams,
-    Object? extra,
-  }) {
-    context.pushNamed(
-      routeName,
-      queryParameters: queryParams ?? <String, dynamic>{},
-      extra: extra,
-    );
-  }
-
-  static void navigateToProductDetail(
-    BuildContext context,
-    String routeName, {
-    Map<String, String>? queryParams,
-    Object? extra,
-  }) {
-    context.pushNamed(
-      routeName,
-      queryParameters: queryParams ?? <String, dynamic>{},
-      extra: extra,
-    );
   }
 
   static void navigateTo(
@@ -310,25 +209,9 @@ enum TAPaths {
     name: 'signUp',
     path: '/signUp',
   ),
-  sendOTP(
-    name: 'sendOTP',
-    path: '/sendOTP',
-  ),
-  otpVerification(
-    name: 'otpVerification',
-    path: '/otpVerification',
-  ),
   home(
     name: 'home',
     path: '/home',
-  ),
-  productDetail(
-    name: 'productDetail',
-    path: '/productDetail',
-  ),
-  profile(
-    name: 'profile',
-    path: '/profile',
   ),
   store(
     name: 'store',
@@ -341,6 +224,14 @@ enum TAPaths {
   orderHistory(
     name: 'orderHistory',
     path: '/orderHistory',
+  ),
+  productDetail(
+    name: 'productDetail',
+    path: '/productDetail',
+  ),
+  profile(
+    name: 'profile',
+    path: '/profile',
   ),
   addProduct(
     name: 'addProduct',
@@ -358,37 +249,13 @@ enum TAPaths {
     name: 'wishlist',
     path: '/wishlist',
   ),
-  beverages(
-    name: 'beverages',
-    path: '/beverages',
+  checkout(
+    name: 'myCart',
+    path: '/myCart',
   ),
-  vegetables(
-    name: 'vegetables',
-    path: '/vegetables',
-  ),
-  breadBakely(
-    name: 'breadBakely',
-    path: '/breadBakely',
-  ),
-  frozenVeg(
-    name: 'frozenVeg',
-    path: '/frozenVeg',
-  ),
-  egg(
-    name: 'egg',
-    path: '/egg',
-  ),
-  fruit(
-    name: 'fruit',
-    path: '/fruit',
-  ),
-  homeCare(
-    name: 'homeCare',
-    path: '/homeCare',
-  ),
-  petCare(
-    name: 'petCare',
-    path: '/petCare',
+  productList(
+    name: 'productList',
+    path: '/productList',
   );
 
   const TAPaths({
@@ -404,40 +271,40 @@ enum TAPaths {
   String toString() => name;
 }
 
-List<LABottomNavigationBarItem> bottomNavigationBarItems(BuildContext context) {
-  final List<LABottomNavigationBarItem> navigationItems = [
-    LABottomNavigationBarItem(
+List<TABottomNavigationBarItem> bottomNavigationBarItems(BuildContext context) {
+  final List<TABottomNavigationBarItem> navigationItems = [
+    TABottomNavigationBarItem(
       icon: TAAssets.home(),
       activeIcon: TAAssets.home(
-        color: const Color(0xFF007A70),
+        color: context.colorScheme.primary,
       ),
       label: S.current.homeLabel,
     ),
-    LABottomNavigationBarItem(
+    TABottomNavigationBarItem(
       icon: TAAssets.search(),
       activeIcon: TAAssets.search(
-        color: const Color(0xFF007A70),
+        color: context.colorScheme.primary,
       ),
       label: S.current.homeBrowseLabel,
     ),
-    LABottomNavigationBarItem(
+    TABottomNavigationBarItem(
       icon: TAAssets.store(),
       activeIcon: TAAssets.store(
-        color: const Color(0xFF007A70),
+        color: context.colorScheme.primary,
       ),
       label: S.current.homeStoreLabel,
     ),
-    LABottomNavigationBarItem(
+    TABottomNavigationBarItem(
       icon: TAAssets.order(),
       activeIcon: TAAssets.order(
-        color: const Color(0xFF007A70),
+        color: context.colorScheme.primary,
       ),
       label: S.current.homeOrderHistoryLabel,
     ),
-    LABottomNavigationBarItem(
+    TABottomNavigationBarItem(
       icon: TAAssets.profile(),
       activeIcon: TAAssets.profile(
-        color: const Color(0xFF007A70),
+        color: context.colorScheme.primary,
       ),
       label: S.current.homeProfileLabel,
     ),

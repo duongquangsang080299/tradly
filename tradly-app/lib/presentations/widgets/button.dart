@@ -65,7 +65,7 @@ class _TAElevatedButtonState extends State<TAElevatedButton> {
                     ? context.colorScheme.primary
                     : context.colorScheme.onPrimary),
             fontSize: widget.textSize ??
-                TaResponsive.scale(
+                TAResponsive.scale(
                   context,
                   defaultValue: widget.value ?? 18,
                 ),
@@ -142,7 +142,7 @@ class _TAOutlinedButtonState extends State<TAOutlinedButton> {
                     ? context.colorScheme.primary
                     : context.colorScheme.onPrimary),
             fontSize: widget.textSize ??
-                TaResponsive.scale(
+                TAResponsive.scale(
                   context,
                   defaultValue: widget.value ?? 18,
                 ),
@@ -150,105 +150,6 @@ class _TAOutlinedButtonState extends State<TAOutlinedButton> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class TAElevatedIconButton extends StatefulWidget {
-  const TAElevatedIconButton({
-    required this.icon,
-    required this.text,
-    this.isLoading = false,
-    this.isDisabled = false,
-    this.width = double.infinity,
-    this.padding,
-    this.onPressed,
-    this.backgroundColor,
-    this.foregroundColor,
-    this.decoration,
-    this.fontWeight,
-    this.iconAlignment = IconAlignment.start,
-    this.style,
-    super.key,
-  });
-
-  final String icon;
-  final Widget text;
-  final bool isLoading;
-  final bool isDisabled;
-  final double? width;
-  final EdgeInsetsGeometry? padding;
-  final VoidCallback? onPressed;
-  final Color? backgroundColor;
-  final Color? foregroundColor;
-  final Decoration? decoration;
-  final FontWeight? fontWeight;
-  final IconAlignment iconAlignment;
-  final ButtonStyle? style;
-
-  @override
-  State<TAElevatedIconButton> createState() => _TAElevatedIconButtonState();
-}
-
-class _TAElevatedIconButtonState extends State<TAElevatedIconButton> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: widget.padding,
-      width: widget.width,
-      decoration: widget.decoration,
-      child: ElevatedButton.icon(
-        style: widget.style ??
-            ButtonStyle(
-              padding: widget.padding != null
-                  ? WidgetStateProperty.all<EdgeInsetsGeometry>(
-                      widget.padding!,
-                    )
-                  : null,
-              backgroundColor: widget.backgroundColor != null
-                  ? WidgetStateProperty.all<Color>(
-                      widget.backgroundColor!,
-                    )
-                  : null,
-              foregroundColor: widget.foregroundColor != null
-                  ? WidgetStateProperty.all<Color>(
-                      widget.foregroundColor!,
-                    )
-                  : null,
-            ),
-        onPressed: widget.isDisabled ? null : widget.onPressed,
-        label: widget.text,
-        iconAlignment: widget.iconAlignment,
-        icon: Container(
-          constraints: const BoxConstraints(maxWidth: 20, maxHeight: 20),
-          padding: const EdgeInsets.only(right: 8),
-          child: Image.asset(
-            widget.icon,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TAIconButtons extends StatelessWidget {
-  const TAIconButtons({
-    required this.icon,
-    this.onPressed,
-    super.key,
-  });
-
-  final Widget icon;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      padding: EdgeInsets.zero,
-      highlightColor: Colors.transparent,
-      splashColor: Colors.transparent,
-      icon: icon,
-      onPressed: onPressed,
     );
   }
 }

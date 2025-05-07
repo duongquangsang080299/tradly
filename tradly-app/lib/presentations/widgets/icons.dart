@@ -6,36 +6,36 @@ class TAIcons {
   static Widget Function({
     Color? color,
     double? size,
-  }) add = _TaIconAdd.new;
+  }) add = _TAIconAdd.new;
 
   static Widget Function({
     Color? color,
     double? size,
-  }) map = _TaIconMap.new;
+  }) map = _TAIconMap.new;
 
   static Widget Function({
     Color? color,
     double? size,
-  }) close = _TaIconClose.new;
+  }) close = _TAIconClose.new;
 
   static Widget Function({
     Color? color,
     double? size,
-  }) attachMoney = _TaIconAttachMoney.new;
+  }) attachMoney = _TAIconAttachMoney.new;
 
   static Widget Function({
     Color? color,
     double? size,
-  }) edit = _TaIconEdit.new;
+  }) edit = _TAIconEdit.new;
 
   static Widget Function({
     Color? color,
     double? size,
-  }) delete = _TaIconDelete.new;
+  }) delete = _TAIconDelete.new;
 }
 
-class _TaIconAdd extends StatelessWidget {
-  const _TaIconAdd({
+class _TAIconAdd extends StatelessWidget {
+  const _TAIconAdd({
     this.color,
     this.size,
   });
@@ -48,7 +48,7 @@ class _TaIconAdd extends StatelessWidget {
     return Icon(
       Icons.add,
       color: color ?? context.colorScheme.onPrimaryContainer,
-      size: TaResponsive.scale(
+      size: TAResponsive.scale(
         context,
         defaultValue: size ?? 24,
       ),
@@ -56,8 +56,8 @@ class _TaIconAdd extends StatelessWidget {
   }
 }
 
-class _TaIconClose extends StatelessWidget {
-  const _TaIconClose({
+class _TAIconClose extends StatelessWidget {
+  const _TAIconClose({
     this.color,
     this.size,
   });
@@ -70,7 +70,7 @@ class _TaIconClose extends StatelessWidget {
     return Icon(
       Icons.close,
       color: color ?? context.colorScheme.onPrimaryContainer,
-      size: TaResponsive.scale(
+      size: TAResponsive.scale(
         context,
         defaultValue: size ?? 16,
       ),
@@ -78,8 +78,8 @@ class _TaIconClose extends StatelessWidget {
   }
 }
 
-class _TaIconEdit extends StatelessWidget {
-  const _TaIconEdit({
+class _TAIconEdit extends StatelessWidget {
+  const _TAIconEdit({
     this.color,
     this.size,
   });
@@ -92,7 +92,7 @@ class _TaIconEdit extends StatelessWidget {
     return Icon(
       Icons.edit,
       color: color ?? context.colorScheme.onPrimary,
-      size: TaResponsive.scale(
+      size: TAResponsive.scale(
         context,
         defaultValue: size ?? 24,
       ),
@@ -100,8 +100,8 @@ class _TaIconEdit extends StatelessWidget {
   }
 }
 
-class _TaIconDelete extends StatelessWidget {
-  const _TaIconDelete({
+class _TAIconDelete extends StatelessWidget {
+  const _TAIconDelete({
     this.color,
     this.size,
   });
@@ -114,7 +114,7 @@ class _TaIconDelete extends StatelessWidget {
     return Icon(
       Icons.delete,
       color: color ?? context.colorScheme.onPrimary,
-      size: TaResponsive.scale(
+      size: TAResponsive.scale(
         context,
         defaultValue: size ?? 24,
       ),
@@ -122,8 +122,8 @@ class _TaIconDelete extends StatelessWidget {
   }
 }
 
-class _TaIconMap extends StatelessWidget {
-  const _TaIconMap({
+class _TAIconMap extends StatelessWidget {
+  const _TAIconMap({
     this.color,
     this.size,
   });
@@ -136,7 +136,7 @@ class _TaIconMap extends StatelessWidget {
     return Icon(
       Icons.map_outlined,
       color: color ?? context.colorScheme.onSecondary,
-      size: TaResponsive.scale(
+      size: TAResponsive.scale(
         context,
         defaultValue: size ?? 24,
       ),
@@ -144,8 +144,8 @@ class _TaIconMap extends StatelessWidget {
   }
 }
 
-class _TaIconAttachMoney extends StatelessWidget {
-  const _TaIconAttachMoney({
+class _TAIconAttachMoney extends StatelessWidget {
+  const _TAIconAttachMoney({
     this.color,
     this.size,
   });
@@ -158,7 +158,7 @@ class _TaIconAttachMoney extends StatelessWidget {
     return Icon(
       Icons.attach_money,
       color: color ?? context.colorScheme.onSecondary,
-      size: TaResponsive.scale(
+      size: TAResponsive.scale(
         context,
         defaultValue: size ?? 24,
       ),

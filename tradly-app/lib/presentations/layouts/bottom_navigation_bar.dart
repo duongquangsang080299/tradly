@@ -7,14 +7,14 @@ class TABottomNavigationBar extends StatefulWidget {
     super.key,
     required this.items,
     this.backgroundColor,
-    this.selectedItemColor = const Color(0xFF007A70),
+    this.selectedItemColor = const Color(0xFF33907C),
     this.unselectedItemColor = Colors.grey,
     this.margin = const EdgeInsets.all(8),
     this.currentIndex = 0,
     this.onTap,
   });
 
-  final List<LABottomNavigationBarItem> items;
+  final List<TABottomNavigationBarItem> items;
   final Color? backgroundColor;
   final Color selectedItemColor;
   final Color unselectedItemColor;
@@ -101,12 +101,12 @@ class _TABottomNavigationBarState extends State<TABottomNavigationBar> {
   }
 }
 
-class LABottomNavigationBarItem {
+class TABottomNavigationBarItem {
   final Widget icon;
   final Widget activeIcon;
   final String label;
 
-  LABottomNavigationBarItem({
+  TABottomNavigationBarItem({
     required this.icon,
     required this.activeIcon,
     required this.label,

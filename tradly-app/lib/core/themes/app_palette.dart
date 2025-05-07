@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TaPalette {
+class TAPalette {
   static const MaterialColor green = MaterialColor(
     0xFF33907C,
     <int, Color>{

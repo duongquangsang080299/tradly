@@ -88,7 +88,7 @@ class TaAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) {
     return TaAppBar(
       appBarType: TaAppBarType.categoryDetail,
-      title: TaDisplaySmallText(
+      title: TADisplaySmallText(
         text: title,
         fontWeight: FontWeight.w700,
       ),
@@ -147,7 +147,7 @@ class TaAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) {
     return TaAppBar(
       appBarType: TaAppBarType.wishlist,
-      title: TaDisplaySmallText(
+      title: TADisplaySmallText(
         text: title,
         fontWeight: FontWeight.w700,
       ),
@@ -196,7 +196,7 @@ class TaAppBar extends StatelessWidget implements PreferredSizeWidget {
           leadingWidth: 56,
           systemOverlayStyle: SystemUiOverlayStyle.light,
           centerTitle: centerTitle,
-          toolbarHeight: TaResponsive.scale(
+          toolbarHeight: TAResponsive.scale(
             context,
             defaultValue: toolbarHeight,
           ),

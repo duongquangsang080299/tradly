@@ -660,6 +660,16 @@ class S {
     );
   }
 
+  /// `Add To Cart`
+  String get productDetailAddToCartButton {
+    return Intl.message(
+      'Add To Cart',
+      name: 'productDetailAddToCartButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Bread & Bakery`
   String get productDetailBreadBakeryTitle {
     return Intl.message(
@@ -1215,6 +1225,126 @@ class S {
     return Intl.message(
       'Logout',
       name: 'profileLogoutTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Cart`
+  String get checkoutTitle {
+    return Intl.message(
+      'My Cart',
+      name: 'checkoutTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `+ Add New Address`
+  String get checkoutAddNewAddressTitle {
+    return Intl.message(
+      '+ Add New Address',
+      name: 'checkoutAddNewAddressTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove`
+  String get checkoutRemoveButton {
+    return Intl.message(
+      'Remove',
+      name: 'checkoutRemoveButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checkout`
+  String get checkoutCheckoutButton {
+    return Intl.message(
+      'Checkout',
+      name: 'checkoutCheckoutButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price Details`
+  String get checkoutPriceDetailsTitle {
+    return Intl.message(
+      'Price Details',
+      name: 'checkoutPriceDetailsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Info`
+  String get checkoutInforTitle {
+    return Intl.message(
+      'Info',
+      name: 'checkoutInforTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Free`
+  String get checkoutDeliveryFreeTitle {
+    return Intl.message(
+      'Delivery Free',
+      name: 'checkoutDeliveryFreeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Amount`
+  String get checkoutTotalAmountTitle {
+    return Intl.message(
+      'Total Amount',
+      name: 'checkoutTotalAmountTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price ({itemCount} item)`
+  String checkoutPriceItemTitle(String itemCount) {
+    return Intl.message(
+      'Price ($itemCount item)',
+      name: 'checkoutPriceItemTitle',
+      desc: '',
+      args: [itemCount],
+    );
+  }
+
+  /// `Order History`
+  String get orderHistoryTitle {
+    return Intl.message(
+      'Order History',
+      name: 'orderHistoryTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transactions`
+  String get orderTransactionsTitle {
+    return Intl.message(
+      'Transactions',
+      name: 'orderTransactionsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get orderHistoryDeliveredButton {
+    return Intl.message(
+      'Delivered',
+      name: 'orderHistoryDeliveredButton',
       desc: '',
       args: [],
     );

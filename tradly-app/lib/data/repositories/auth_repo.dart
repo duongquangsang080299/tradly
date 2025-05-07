@@ -11,10 +11,12 @@ abstract class AuthRepository {
     required String email,
     required String password,
   });
-  Future<void> forgotPassword(String email);
-  Future<void> resetPassword(String password);
-  Future<void> logout();
+
   Future<String?> getSessionToken();
+
+  Future<void> logout();
+
+  Future<User?> getCurrentUser();
 }
 
 class AuthRepositoryImplement implements AuthRepository {
@@ -43,22 +45,31 @@ class AuthRepositoryImplement implements AuthRepository {
     required String emailOrPhoneNumber,
     required String password,
     required String username,
-  }) =>
-      _client.auth.signUp(
-        email: emailOrPhoneNumber.contains('@') ? emailOrPhoneNumber : null,
-        phone: emailOrPhoneNumber.contains('@') ? null : emailOrPhoneNumber,
-        password: password,
-        data: {'username': username},
-      );
+  }) async {
+    final response = await _client.auth.signUp(
+      email: emailOrPhoneNumber.contains('@') ? emailOrPhoneNumber : null,
+      phone: emailOrPhoneNumber.contains('@') ? null : emailOrPhoneNumber,
+      password: password,
+      data: {'username': username},
+    );
+
+    final user = response.user;
+
+    if (user != null) {
+      await _client.from('users').insert({
+        'user_id': user.id,
+        'email': user.email,
+        'username': username,
+      });
+    }
+
+    return response;
+  }
 
   @override
-  Future<void> forgotPassword(String email) async =>
-      await _client.auth.resetPasswordForEmail(email);
-
-  @override
-  Future<void> resetPassword(String password) async {
-    final userAttributes = UserAttributes(password: password);
-    await _client.auth.updateUser(userAttributes);
+  Future<String?> getSessionToken() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('session_token');
   }
 
   @override
@@ -69,8 +80,8 @@ class AuthRepositoryImplement implements AuthRepository {
   }
 
   @override
-  Future<String?> getSessionToken() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getString('session_token');
+  Future<User?> getCurrentUser() async {
+    final user = _client.auth.currentUser;
+    return user;
   }
 }

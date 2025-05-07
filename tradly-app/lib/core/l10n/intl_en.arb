@@ -89,6 +89,7 @@
     "description": "Store translations that are likely to be used only in Product Detail feature"
   },
   "productDetailBeveragesTitle":"Beverages",
+  "productDetailAddToCartButton":"Add To Cart",
   "productDetailBreadBakeryTitle":"Bread & Bakery",
   "productDetailEggTitle":"Egg",
   "productDetailFrozenVegTitle":"Frozen Veg",
@@ -152,5 +153,33 @@
   "profileFeedbackTitle":"Feedback",
   "profileReferFriendTitle":"Refer a Friend",
   "profileTermsAndConditionsTitle":"Terms & Conditions",
-  "profileLogoutTitle":"Logout"
+  "profileLogoutTitle":"Logout",
+  "@segmentCheckout": {
+    "---------------------------": "---------------------------",
+    "description": "Store translations that are likely to be used only in Checkout feature"
+  },
+  "checkoutTitle":"My Cart",
+  "checkoutAddNewAddressTitle":"+ Add New Address",
+  "checkoutRemoveButton":"Remove",
+  "checkoutCheckoutButton":"Checkout",
+  "checkoutPriceDetailsTitle":"Price Details",
+  "checkoutInforTitle":"Info",
+  "checkoutDeliveryFreeTitle":"Delivery Free",
+  "checkoutTotalAmountTitle":"Total Amount",
+  "checkoutPriceItemTitle": "Price ({itemCount} item)",
+  "@checkoutPriceItemTitle": {
+    "placeholders": {
+      "itemCount": {
+        "type": "String",
+        "example": "10"
+      }
+    }
+  },
+   "@segmentOrderHistory": {
+    "---------------------------": "---------------------------",
+    "description": "Store translations that are likely to be used only in Order History feature"
+  },
+  "orderHistoryTitle":"Order History",
+  "orderTransactionsTitle":"Transactions",
+  "orderHistoryDeliveredButton":"Delivered"
 }

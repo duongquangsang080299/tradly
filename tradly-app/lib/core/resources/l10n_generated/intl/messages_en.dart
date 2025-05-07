@@ -20,8 +20,24 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(itemCount) => "Price (${itemCount} item)";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "checkoutAddNewAddressTitle":
+            MessageLookupByLibrary.simpleMessage("+ Add New Address"),
+        "checkoutCheckoutButton":
+            MessageLookupByLibrary.simpleMessage("Checkout"),
+        "checkoutDeliveryFreeTitle":
+            MessageLookupByLibrary.simpleMessage("Delivery Free"),
+        "checkoutInforTitle": MessageLookupByLibrary.simpleMessage("Info"),
+        "checkoutPriceDetailsTitle":
+            MessageLookupByLibrary.simpleMessage("Price Details"),
+        "checkoutPriceItemTitle": m0,
+        "checkoutRemoveButton": MessageLookupByLibrary.simpleMessage("Remove"),
+        "checkoutTitle": MessageLookupByLibrary.simpleMessage("My Cart"),
+        "checkoutTotalAmountTitle":
+            MessageLookupByLibrary.simpleMessage("Total Amount"),
         "homeBannerDescription": MessageLookupByLibrary.simpleMessage(
             "READY TO DELIVER TO\nYOUR HOME"),
         "homeBannerTextButton":
@@ -54,6 +70,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Connecting NGOs, Social Enterprises with Communities"),
         "onBoardingsupportDescription": MessageLookupByLibrary.simpleMessage(
             " Donate, Invest & Support infrastructure projects"),
+        "orderHistoryDeliveredButton":
+            MessageLookupByLibrary.simpleMessage("Delivered"),
+        "orderHistoryTitle":
+            MessageLookupByLibrary.simpleMessage("Order History"),
+        "orderTransactionsTitle":
+            MessageLookupByLibrary.simpleMessage("Transactions"),
         "otpVerificationButton": MessageLookupByLibrary.simpleMessage("Verify"),
         "otpVerificationDescription":
             MessageLookupByLibrary.simpleMessage("Enter your OTP code here"),
@@ -64,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Resent new code"),
         "otpVerificationTitle":
             MessageLookupByLibrary.simpleMessage("Phone Verification"),
+        "productDetailAddToCartButton":
+            MessageLookupByLibrary.simpleMessage("Add To Cart"),
         "productDetailBeveragesTitle":
             MessageLookupByLibrary.simpleMessage("Beverages"),
         "productDetailBreadBakeryTitle":

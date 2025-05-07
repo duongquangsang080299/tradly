@@ -4,7 +4,7 @@ import 'package:tradly_app/data/models/product_model.dart';
 import 'package:tradly_app/presentations/pages/home/states/home_bloc.dart';
 import 'package:tradly_app/presentations/pages/home/states/home_state.dart';
 import 'package:tradly_app/presentations/widgets/card.dart';
-// import 'package:tradly_app/presentations/widgets/shimmer.dart';
+import 'package:tradly_app/presentations/widgets/shimmer.dart';
 
 class PopularProductList extends StatelessWidget {
   const PopularProductList({
@@ -16,9 +16,7 @@ class PopularProductList extends StatelessWidget {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         if (state.status is HomeStatusListLoading) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return ShimmerProductList();
         }
 
         return SizedBox(

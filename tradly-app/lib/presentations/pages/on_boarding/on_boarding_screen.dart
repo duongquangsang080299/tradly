@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:tradly_app/core/extensions/context_extensions.dart';
 import 'package:tradly_app/core/resources/l10n_generated/l10n.dart';
 import 'package:tradly_app/core/routes/app_router.dart';
+import 'package:tradly_app/presentations/layouts/scaffold.dart';
 import 'package:tradly_app/presentations/widgets/assets.dart';
 import 'package:tradly_app/presentations/widgets/button.dart';
 import 'package:tradly_app/presentations/widgets/text.dart';
@@ -35,31 +36,27 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     ),
   ];
 
-  List<Widget> _buildPageIndicator() {
-    return List.generate(numPages, (index) {
-      return AnimatedContainer(
-        duration: const Duration(milliseconds: 150),
-        margin: const EdgeInsets.symmetric(horizontal: 8),
-        height: 12,
-        width: currentPage == index ? 12 : 12,
-        decoration: BoxDecoration(
-          color: currentPage == index
-              ? context.colorScheme.primary
-              : context.colorScheme.primaryContainer,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(12),
+  List<Widget> _buildPageIndicator() => List.generate(
+        numPages,
+        (index) => AnimatedContainer(
+          duration: const Duration(milliseconds: 150),
+          margin: const EdgeInsets.symmetric(horizontal: 8),
+          height: 12,
+          width: 12,
+          decoration: BoxDecoration(
+            color: currentPage == index
+                ? context.colorScheme.primary
+                : context.colorScheme.primaryContainer,
+            borderRadius: BorderRadius.circular(12),
           ),
         ),
       );
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     final isLastPage = currentPage == numPages - 1;
 
-    return Scaffold(
-      backgroundColor: context.colorScheme.onPrimary,
+    return TAScaffold(
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -79,11 +76,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 flex: 2,
                 child: PageView.builder(
                   controller: pageController,
-                  onPageChanged: (index) {
-                    setState(() {
-                      currentPage = index;
-                    });
-                  },
+                  onPageChanged: (index) => setState(() => currentPage = index),
                   itemCount: onboardingData.length,
                   itemBuilder: (context, index) {
                     final item = onboardingData[index];
@@ -99,9 +92,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ),
                           child: item.image,
                         ),
+                        const SizedBox(height: 25),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 46),
-                          child: TaHeadlineLargeText(
+                          child: TAHeadlineLargeText(
                             text: item.description,
                             fontWeight: FontWeight.w500,
                             textAlign: TextAlign.center,

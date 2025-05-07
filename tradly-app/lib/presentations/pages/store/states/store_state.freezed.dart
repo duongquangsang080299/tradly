@@ -90,18 +90,18 @@ class _$StoreStatusCopyWithImpl<$Res, $Val extends StoreStatus>
 }
 
 /// @nodoc
-abstract class _$$StorelStatusInitialImplCopyWith<$Res> {
-  factory _$$StorelStatusInitialImplCopyWith(_$StorelStatusInitialImpl value,
-          $Res Function(_$StorelStatusInitialImpl) then) =
-      __$$StorelStatusInitialImplCopyWithImpl<$Res>;
+abstract class _$$StoreStatusInitialImplCopyWith<$Res> {
+  factory _$$StoreStatusInitialImplCopyWith(_$StoreStatusInitialImpl value,
+          $Res Function(_$StoreStatusInitialImpl) then) =
+      __$$StoreStatusInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StorelStatusInitialImplCopyWithImpl<$Res>
-    extends _$StoreStatusCopyWithImpl<$Res, _$StorelStatusInitialImpl>
-    implements _$$StorelStatusInitialImplCopyWith<$Res> {
-  __$$StorelStatusInitialImplCopyWithImpl(_$StorelStatusInitialImpl _value,
-      $Res Function(_$StorelStatusInitialImpl) _then)
+class __$$StoreStatusInitialImplCopyWithImpl<$Res>
+    extends _$StoreStatusCopyWithImpl<$Res, _$StoreStatusInitialImpl>
+    implements _$$StoreStatusInitialImplCopyWith<$Res> {
+  __$$StoreStatusInitialImplCopyWithImpl(_$StoreStatusInitialImpl _value,
+      $Res Function(_$StoreStatusInitialImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of StoreStatus
@@ -110,8 +110,8 @@ class __$$StorelStatusInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StorelStatusInitialImpl implements StoreStatusInitial {
-  const _$StorelStatusInitialImpl();
+class _$StoreStatusInitialImpl implements StoreStatusInitial {
+  const _$StoreStatusInitialImpl();
 
   @override
   String toString() {
@@ -121,8 +121,7 @@ class _$StorelStatusInitialImpl implements StoreStatusInitial {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StorelStatusInitialImpl);
+        (other.runtimeType == runtimeType && other is _$StoreStatusInitialImpl);
   }
 
   @override
@@ -204,22 +203,22 @@ class _$StorelStatusInitialImpl implements StoreStatusInitial {
 }
 
 abstract class StoreStatusInitial implements StoreStatus {
-  const factory StoreStatusInitial() = _$StorelStatusInitialImpl;
+  const factory StoreStatusInitial() = _$StoreStatusInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$StorelStatusLoadingImplCopyWith<$Res> {
-  factory _$$StorelStatusLoadingImplCopyWith(_$StorelStatusLoadingImpl value,
-          $Res Function(_$StorelStatusLoadingImpl) then) =
-      __$$StorelStatusLoadingImplCopyWithImpl<$Res>;
+abstract class _$$StoreStatusLoadingImplCopyWith<$Res> {
+  factory _$$StoreStatusLoadingImplCopyWith(_$StoreStatusLoadingImpl value,
+          $Res Function(_$StoreStatusLoadingImpl) then) =
+      __$$StoreStatusLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StorelStatusLoadingImplCopyWithImpl<$Res>
-    extends _$StoreStatusCopyWithImpl<$Res, _$StorelStatusLoadingImpl>
-    implements _$$StorelStatusLoadingImplCopyWith<$Res> {
-  __$$StorelStatusLoadingImplCopyWithImpl(_$StorelStatusLoadingImpl _value,
-      $Res Function(_$StorelStatusLoadingImpl) _then)
+class __$$StoreStatusLoadingImplCopyWithImpl<$Res>
+    extends _$StoreStatusCopyWithImpl<$Res, _$StoreStatusLoadingImpl>
+    implements _$$StoreStatusLoadingImplCopyWith<$Res> {
+  __$$StoreStatusLoadingImplCopyWithImpl(_$StoreStatusLoadingImpl _value,
+      $Res Function(_$StoreStatusLoadingImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of StoreStatus
@@ -228,8 +227,8 @@ class __$$StorelStatusLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StorelStatusLoadingImpl implements StoreStatusLoading {
-  const _$StorelStatusLoadingImpl();
+class _$StoreStatusLoadingImpl implements StoreStatusLoading {
+  const _$StoreStatusLoadingImpl();
 
   @override
   String toString() {
@@ -239,8 +238,7 @@ class _$StorelStatusLoadingImpl implements StoreStatusLoading {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StorelStatusLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$StoreStatusLoadingImpl);
   }
 
   @override
@@ -322,22 +320,22 @@ class _$StorelStatusLoadingImpl implements StoreStatusLoading {
 }
 
 abstract class StoreStatusLoading implements StoreStatus {
-  const factory StoreStatusLoading() = _$StorelStatusLoadingImpl;
+  const factory StoreStatusLoading() = _$StoreStatusLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$StorelStatusSuccessImplCopyWith<$Res> {
-  factory _$$StorelStatusSuccessImplCopyWith(_$StorelStatusSuccessImpl value,
-          $Res Function(_$StorelStatusSuccessImpl) then) =
-      __$$StorelStatusSuccessImplCopyWithImpl<$Res>;
+abstract class _$$StoreStatusSuccessImplCopyWith<$Res> {
+  factory _$$StoreStatusSuccessImplCopyWith(_$StoreStatusSuccessImpl value,
+          $Res Function(_$StoreStatusSuccessImpl) then) =
+      __$$StoreStatusSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StorelStatusSuccessImplCopyWithImpl<$Res>
-    extends _$StoreStatusCopyWithImpl<$Res, _$StorelStatusSuccessImpl>
-    implements _$$StorelStatusSuccessImplCopyWith<$Res> {
-  __$$StorelStatusSuccessImplCopyWithImpl(_$StorelStatusSuccessImpl _value,
-      $Res Function(_$StorelStatusSuccessImpl) _then)
+class __$$StoreStatusSuccessImplCopyWithImpl<$Res>
+    extends _$StoreStatusCopyWithImpl<$Res, _$StoreStatusSuccessImpl>
+    implements _$$StoreStatusSuccessImplCopyWith<$Res> {
+  __$$StoreStatusSuccessImplCopyWithImpl(_$StoreStatusSuccessImpl _value,
+      $Res Function(_$StoreStatusSuccessImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of StoreStatus
@@ -346,8 +344,8 @@ class __$$StorelStatusSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StorelStatusSuccessImpl implements StoreStatusSuccess {
-  const _$StorelStatusSuccessImpl();
+class _$StoreStatusSuccessImpl implements StoreStatusSuccess {
+  const _$StoreStatusSuccessImpl();
 
   @override
   String toString() {
@@ -357,8 +355,7 @@ class _$StorelStatusSuccessImpl implements StoreStatusSuccess {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StorelStatusSuccessImpl);
+        (other.runtimeType == runtimeType && other is _$StoreStatusSuccessImpl);
   }
 
   @override
@@ -440,22 +437,22 @@ class _$StorelStatusSuccessImpl implements StoreStatusSuccess {
 }
 
 abstract class StoreStatusSuccess implements StoreStatus {
-  const factory StoreStatusSuccess() = _$StorelStatusSuccessImpl;
+  const factory StoreStatusSuccess() = _$StoreStatusSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$StorelStatusFailureImplCopyWith<$Res> {
-  factory _$$StorelStatusFailureImplCopyWith(_$StorelStatusFailureImpl value,
-          $Res Function(_$StorelStatusFailureImpl) then) =
-      __$$StorelStatusFailureImplCopyWithImpl<$Res>;
+abstract class _$$StoreStatusFailureImplCopyWith<$Res> {
+  factory _$$StoreStatusFailureImplCopyWith(_$StoreStatusFailureImpl value,
+          $Res Function(_$StoreStatusFailureImpl) then) =
+      __$$StoreStatusFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StorelStatusFailureImplCopyWithImpl<$Res>
-    extends _$StoreStatusCopyWithImpl<$Res, _$StorelStatusFailureImpl>
-    implements _$$StorelStatusFailureImplCopyWith<$Res> {
-  __$$StorelStatusFailureImplCopyWithImpl(_$StorelStatusFailureImpl _value,
-      $Res Function(_$StorelStatusFailureImpl) _then)
+class __$$StoreStatusFailureImplCopyWithImpl<$Res>
+    extends _$StoreStatusCopyWithImpl<$Res, _$StoreStatusFailureImpl>
+    implements _$$StoreStatusFailureImplCopyWith<$Res> {
+  __$$StoreStatusFailureImplCopyWithImpl(_$StoreStatusFailureImpl _value,
+      $Res Function(_$StoreStatusFailureImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of StoreStatus
@@ -464,8 +461,8 @@ class __$$StorelStatusFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StorelStatusFailureImpl implements StoreStatusFailure {
-  const _$StorelStatusFailureImpl();
+class _$StoreStatusFailureImpl implements StoreStatusFailure {
+  const _$StoreStatusFailureImpl();
 
   @override
   String toString() {
@@ -475,8 +472,7 @@ class _$StorelStatusFailureImpl implements StoreStatusFailure {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StorelStatusFailureImpl);
+        (other.runtimeType == runtimeType && other is _$StoreStatusFailureImpl);
   }
 
   @override
@@ -558,5 +554,5 @@ class _$StorelStatusFailureImpl implements StoreStatusFailure {
 }
 
 abstract class StoreStatusFailure implements StoreStatus {
-  const factory StoreStatusFailure() = _$StorelStatusFailureImpl;
+  const factory StoreStatusFailure() = _$StoreStatusFailureImpl;
 }

@@ -4,6 +4,7 @@ import 'package:tradly_app/core/extensions/context_extensions.dart';
 import 'package:tradly_app/core/routes/app_router.dart';
 import 'package:tradly_app/data/models/product_model.dart';
 import 'package:tradly_app/presentations/layouts/app_bar.dart';
+import 'package:tradly_app/presentations/layouts/scaffold.dart';
 import 'package:tradly_app/presentations/pages/product_detail/states/product_detail_bloc.dart';
 import 'package:tradly_app/presentations/pages/product_detail/states/product_detail_state.dart';
 import 'package:tradly_app/presentations/widgets/card.dart';
@@ -18,7 +19,7 @@ class WishListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return TAScaffold(
         appBar: TaAppBar.wishlist(
           title: 'Wishlist',
           onBackPressed: () => Navigator.pop(context),
@@ -45,7 +46,7 @@ class WishListPage extends StatelessWidget {
                   final product = wishlistProducts?[index];
                   return TACardProduct(
                     onTapProduct: () {
-                      TARouter.navigateToProductDetail(
+                      TARouter.navigateTo(
                         context,
                         TAPaths.productDetail.name,
                         extra: product?.id,

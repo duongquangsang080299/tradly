@@ -1,24 +1,30 @@
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:tradly_app/app_provider.dart';
 import 'package:tradly_app/core/api/api_client.dart';
 import 'package:tradly_app/core/env/env.dart';
+import 'package:tradly_app/core/resources/l10n_generated/l10n.dart';
+import 'package:tradly_app/core/routes/app_router.dart';
+import 'package:tradly_app/core/themes/app_theme.dart';
 import 'package:tradly_app/data/repositories/auth_repo.dart';
 import 'package:tradly_app/data/repositories/product_repo.dart';
 import 'package:tradly_app/data/repositories/store_repo.dart.dart';
-import 'package:tradly_app/core/resources/l10n_generated/l10n.dart';
-import 'package:tradly_app/core/routes/app_router.dart';
-import 'package:tradly_app/presentations/pages/auth/states/sign_in_bloc.dart';
+import 'package:tradly_app/firebase_options.dart';
+import 'package:tradly_app/presentations/pages/auth/sign_in/states/sign_in_bloc.dart';
 import 'package:tradly_app/presentations/pages/product_detail/states/product_detail_bloc.dart';
 import 'package:tradly_app/presentations/pages/store/states/store_bloc.dart';
-import 'package:tradly_app/core/themes/app_theme.dart';
-import 'package:tradly_app/app_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   await Supabase.initialize(
     url: Env.supabaseUrl,
@@ -91,8 +97,8 @@ class _TradlyShopAppState extends State<TradlyShopApp>
       ],
       child: TAProvider(
         child: MaterialApp.router(
-          theme: TaTheme.light,
-          darkTheme: TaTheme.dark,
+          theme: TATheme.light,
+          darkTheme: TATheme.dark,
           debugShowCheckedModeBanner: false,
           locale: const Locale('en', 'US'),
           localizationsDelegates: const [
